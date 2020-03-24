@@ -1,0 +1,204 @@
+map America
+city Atlanta
+city Boston
+city Calgary
+city Charleston
+city Chicago
+city Dallas
+city Denver
+city Duluth
+city El Paso
+city Helena
+city Houston
+city Kansas City
+city Las Vegas
+city Little Rock
+city Los Angeles
+city Miami
+city Montréal
+city Nashville
+city New Orleans
+city New York
+city Oklahoma City
+city Omaha
+city Phoenix
+city Pittsburgh
+city Portland
+city Raleigh
+city Saint Louis
+city Salt Lake City
+city San Francisco
+city Santa Fe
+city Sault St. Marie
+city Seattle
+city Toronto
+city Vancouver
+city Washington
+city Winnipeg
+track both Vancouver and Seattle Wild 1
+track both Vancouver and Seattle Wild 1
+track both Vancouver and Calgary Wild 3
+track both Seattle and Calgary Wild 4
+track both Seattle and Portland Wild 1
+track both Seattle and Portland Wild 1
+track both Seattle and Helena Yellow 6
+track both Calgary and Helena Wild 4
+track both Calgary and Winnipeg White 6
+track both Portland and Salt Lake City Blue 6
+track both Portland and San Francisco Green 5
+track both Portland and San Francisco Pink 5
+track both San Francisco and Salt Lake City Orange 5
+track both San Francisco and Salt Lake City White 5
+track both San Francisco and Los Angeles Pink 3
+track both San Francisco and Los Angeles Yellow 3
+track both Helena and Salt Lake City Pink 3
+track both Salt Lake City and Las Vegas Orange 3
+track both Los Angeles and Las Vegas Wild 2
+track both Winnipeg and Helena Blue 4
+track both Helena and Denver Green 4
+track both Salt Lake City and Denver Red 3
+track both Salt Lake City and Denver Yellow 3
+track both Phoenix and Denver White 5
+track both Phoenix and Los Angeles Wild 3
+track both Los Angeles and El Paso Black 6
+track both Phoenix and El Paso Wild 3
+track both Phoenix and Santa Fe Wild 3
+track both Santa Fe and Denver Wild 2
+track both Santa Fe and El Paso Wild 2
+track both El Paso and Houston Green 6
+track both El Paso and Oklahoma City Yellow 5
+track both El Paso and Dallas Red 4
+track both Santa Fe and Oklahoma City Blue 3
+track both Denver and Oklahoma City Red 4
+track both Denver and Kansas City Black 4
+track both Denver and Kansas City Orange 4
+track both Denver and Omaha Pink 4
+track both Helena and Omaha Red 5
+track both Helena and Duluth Orange 6
+track both Winnipeg and Duluth Black 4
+track both Winnipeg and Sault St. Marie Wild 6
+track both Duluth and Sault St. Marie Wild 3
+track both Duluth and Toronto Pink 6
+track both Sault St. Marie and Toronto Wild 2
+track both Sault St. Marie and Montréal Black 5
+track both Duluth and Omaha Wild 2
+track both Duluth and Omaha Wild 2
+track both Omaha and Kansas City Wild 1
+track both Omaha and Kansas City Wild 1
+track both Kansas City and Oklahoma City Wild 2
+track both Kansas City and Oklahoma City Wild 2
+track both Oklahoma City and Dallas Wild 2
+track both Oklahoma City and Dallas Wild 2
+track both Dallas and Houston Wild 1
+track both Dallas and Houston Wild 1
+track both Houston and New Orleans Wild 2
+track both Dallas and Little Rock Wild 2
+track both Oklahoma City and Little Rock Wild 2
+track both Kansas City and Saint Louis Blue 2
+track both Kansas City and Saint Louis Pink 2
+track both Omaha and Chicago Blue 4
+track both Duluth and Chicago Red 3
+track both Chicago and Toronto White 4
+track both Toronto and Montréal Wild 3
+track both Chicago and Pittsburgh Orange 3
+track both Chicago and Pittsburgh Black 3
+track both Chicago and Saint Louis Green 2
+track both Chicago and Saint Louis White 2
+track both Saint Louis and Pittsburgh Green 5
+track both Saint Louis and Nashville Wild 2
+track both Saint Louis and Little Rock Wild 2
+track both Little Rock and Nashville White 3
+track both New Orleans and Little Rock Green 3
+track both New Orleans and Atlanta Yellow 4
+track both New Orleans and Atlanta Orange 4
+track both New Orleans and Miami Red 6
+track both Miami and Atlanta Blue 5
+track both Miami and Charleston Pink 4
+track both Nashville and Pittsburgh Yellow 4
+track both Nashville and Atlanta Wild 1
+track both Atlanta and Charleston Wild 2
+track both Atlanta and Raleigh Wild 2
+track both Atlanta and Raleigh Wild 2
+track both Nashville and Raleigh Black 3
+track both Raleigh and Pittsburgh Wild 2
+track both Raleigh and Charleston Wild 2
+track both Raleigh and Washington Wild 2
+track both Raleigh and Washington Wild 2
+track both Pittsburgh and Washington Wild 2
+track both New York and Washington Orange 2
+track both New York and Washington Black 2
+track both New York and Pittsburgh Green 2
+track both New York and Pittsburgh White 2
+track both Toronto and Pittsburgh Wild 2
+track both Montréal and New York Blue 3
+track both Montréal and Boston Wild 2
+track both Montréal and Boston Wild 2
+track both Boston and New York Yellow 2
+track both Boston and New York Red 2
+ticket Boston and Miami 12
+ticket Calgary and Salt Lake City 7
+ticket Calgary and Phoenix 13
+ticket Chicago and New Orleans 7
+ticket Chicago and Santa Fe 9
+ticket Dallas and New York 11
+ticket Denver and Pittsburgh 11
+ticket Denver and El Paso 4
+ticket Duluth and El Paso 10
+ticket Duluth and Houston 8
+ticket Helena and Los Angeles 8
+ticket Kansas City and Houston 5
+ticket Los Angeles and Miami 20
+ticket Los Angeles and New York 21
+ticket Los Angeles and Chicago 16
+ticket Montréal and New Orleans 13
+ticket Montréal and Atlanta 9
+ticket New York and Atlanta 6
+ticket San Francisco and Atlanta 17
+ticket Sault St. Marie and Nashville 8
+ticket Sault St. Marie and Oklahoma City 9
+ticket Seattle and New York 22
+ticket Seattle and Los Angeles 9
+ticket Toronto and Miami 10
+ticket Portland and Nashville 17
+ticket Portland and Phoenix 11
+ticket Vancouver and Montréal 20
+ticket Vancouver and Santa Fe 13
+ticket Winnipeg and Little Rock 11
+ticket Winnipeg and Houston 12
+test paths Vancouver 3
+test paths Seattle 6
+test paths Calgary 4
+test paths Portland 5
+test paths San Francisco 6
+test paths Las Vegas 2
+test paths Salt Lake City 7
+test paths Los Angeles 5
+test paths Phoenix 4
+test paths El Paso 6
+test paths Santa Fe 4
+test paths Denver 9
+test paths Helena 7
+test paths Winnipeg 4
+test paths Duluth 7
+test paths Omaha 7
+test paths Kansas City 8
+test paths Oklahoma City 8
+test paths Dallas 6
+test paths Houston 4
+test paths New Orleans 5
+test paths Little Rock 5
+test paths Saint Louis 7
+test paths Chicago 7
+test paths Pittsburgh 9
+test paths Toronto 5
+test paths Sault St. Marie 4
+test paths Montréal 5
+test paths Boston 4
+test paths New York 7
+test paths Washington 5
+test paths Raleigh 7
+test paths Charleston 3
+test paths Miami 3
+test paths Atlanta 7
+test paths Nashville 5
+test cities 36
