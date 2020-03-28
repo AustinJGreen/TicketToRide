@@ -1,15 +1,18 @@
-package ttr
+package game
 
 type City struct {
-	id     int
 	name   string
 	tracks []*Track
 }
 
-func CityNew(id int, name string) *City {
-	return &City{id, name, nil}
+func CityNew(name string) *City {
+	return &City{name, nil}
 }
 
 func (city *City) AddPath(path *Track) {
 	city.tracks = append(city.tracks, path)
+}
+
+func (city City) Tracks() []*Track {
+	return city.tracks
 }

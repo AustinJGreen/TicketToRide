@@ -1,18 +1,17 @@
-package heuristics
+package game
 
 import (
-	"TicketToRide/ttr"
 	"math"
 )
 
 type TrackCount struct {}
 
-func (TrackCount) Cost(ttr.Track) int {
+func (TrackCount) Cost(Track) int {
 	return 1
 }
 
 func (TrackCount) Best(h1, h2 int) int {
-	return ttr.MinInt(h1, h2)
+	return MinInt(h1, h2)
 }
 
 func (TrackCount) Less(h1, h2 int) bool {

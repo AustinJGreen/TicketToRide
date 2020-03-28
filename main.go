@@ -1,8 +1,7 @@
 package main
 
 import (
-	"TicketToRide/ttr"
-	"TicketToRide/ttr/heuristics"
+	"TicketToRide/game"
 	"fmt"
 )
 
@@ -13,25 +12,26 @@ func main() {
 	// 12 of each color
 	// 14 wilds
 	// 30 destination cards
-	america, err := ttr.ReadMap("america.map")
+	america, err := game.ReadMap("america.map")
 	if err != nil {
 		fmt.Printf("Failed to load map, %s", err.Error())
 		return
 	}
 
-	//route := ttr.NewRoute("Nashville", "Sault St. Marie")
+	ge := game.NewGraphEngine(america)
+	heuristic := game.Distance{}
+
 	from := america.CityFromName("Los Angeles")
 	to := america.CityFromName("Montréal")
-	heuristic := heuristics.Distance{}
-	paths := america.BuildSinglePaths(from, to, heuristic, 0)
+	paths := ge.BuildSinglePaths(to, from, heuristic, 0)
 
 	for i, path := range paths {
-		fmt.Printf("--- Path %d %d ---\n", i, path.Hash())
+		fmt.Printf("--- Path %d ---\n", i)
 		for _, city := range path.Cities() {
 			fmt.Println(city)
 		}
 		fmt.Printf("Score = %d\n", path.HeuristicScore(heuristic))
-		fmt.Printf("Length = %d\n", path.TotalLength())
+		fmt.Printf("Length = %d\n", path.HeuristicScore(game.Distance{}))
 		fmt.Println("--- End Path ---")
 	}
 

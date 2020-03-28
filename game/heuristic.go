@@ -1,4 +1,4 @@
-package ttr
+package game
 
 type Heuristic interface {
 	Cost(Track) int

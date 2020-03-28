@@ -1,0 +1,19 @@
+name Test
+city A
+city B
+city C
+city D
+track both A and B wild 4
+track both A and D wild 3
+track both B and C wild 2
+track both C and D wild 3
+ticket A and B 4
+ticket A and C 12
+ticket A and D 5
+ticket B and D 10
+ticket B and C 3
+ticket C and D 4
+test paths A 2
+test paths B 2
+test paths C 2
+test paths D 2

@@ -1,4 +1,4 @@
-package ttr
+package game
 
 type Ticket struct {
 	cityNameA string

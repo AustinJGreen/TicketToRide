@@ -1,4 +1,4 @@
-package ttr
+package game
 
 import "math"
 

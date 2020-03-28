@@ -1,12 +1,14 @@
-package ttr
+package game
 
-import "container/heap"
+import (
+	"container/heap"
+)
 
 type HeuristicItem struct {
 	value interface{}
 	cost  int
 	index int
-	h Heuristic
+	h     Heuristic
 }
 
 type HeuristicHeapArray []*HeuristicItem

@@ -1,4 +1,4 @@
-package ttr
+package game
 
 type Path struct {
 	tracks []*Track
@@ -29,7 +29,7 @@ func (p Path) HeuristicScore (h Heuristic) int {
 	return sum
 }
 
-func (p Path) Error(heuristicMap map[int]int, h Heuristic) int {
+func (p Path) Error(heuristicMap map[*City]int, h Heuristic) int {
 	totalError := 0
 	cities := p.Cities()
 	for i, track := range p.tracks {
@@ -40,21 +40,13 @@ func (p Path) Error(heuristicMap map[int]int, h Heuristic) int {
 	return totalError
 }
 
-func (p Path) Hash() int64 {
-	var hash int64 = 17
-	for _, track := range p.tracks {
-		hash = hash * 19 + int64(track.id)
-	}
-	return hash
-}
-
 func (p *Path) AddTrack(track *Track) {
 	p.tracks = append(p.tracks, track)
 }
 
 func (p Path) CanAdd(t *Track) bool {
 	for _, track := range p.tracks {
-		if t.id == track.id || track.Matches(t) {
+		if t == track || track.Matches(*t) {
 			return false
 		}
 	}
@@ -82,21 +74,12 @@ func (p Path) LastCity() (*City, error) {
 	} else if p.TrackCount() == 1 {
 		return p.tracks[0].Target(p.sourceCity)
 	} else {
-		return p.tracks[p.TrackCount() - 1].Xor(p.tracks[p.TrackCount() - 2])
+		return p.tracks[p.TrackCount() - 1].Xor(*p.tracks[p.TrackCount() - 2])
 	}
 }
 
 func (p Path) TrackCount() int {
 	return len(p.tracks)
-}
-
-func (p Path) TotalLength() int {
-	sum := 0
-	for i := 0; i < len(p.tracks); i++ {
-		sum += p.tracks[i].length
-	}
-
-	return sum
 }
 
 func (p Path) Tracks() []*Track {
@@ -106,17 +89,17 @@ func (p Path) Tracks() []*Track {
 func (p Path) Cities() []*City {
 	cnt := p.TrackCount()
 	if cnt == 0 {
-		return []*City { }
+		return []*City{ }
 	} else if cnt == 1 {
 		targetCity, _ := p.tracks[0].Target(p.sourceCity)
-		return []*City { p.sourceCity, targetCity }
+		return []*City{p.sourceCity, targetCity }
 	}
 
 	cities := make([]*City, cnt + 1)
-	cities[0], _ = p.tracks[0].Xor(p.tracks[1])
+	cities[0], _ = p.tracks[0].Xor(*p.tracks[1])
 	for i := 1; i < cnt; i++ {
-		cities[i], _ = p.tracks[i].And(p.tracks[i - 1])
+		cities[i], _ = p.tracks[i].And(*p.tracks[i - 1])
 	}
-	cities[cnt], _ = p.tracks[cnt- 1].Xor(p.tracks[cnt- 2])
+	cities[cnt], _ = p.tracks[cnt- 1].Xor(*p.tracks[cnt- 2])
 	return cities
 }

@@ -1,4 +1,4 @@
-package ttr
+package game
 
 import (
 	"bufio"
@@ -77,7 +77,7 @@ func ReadMap(filename string) (*Map, error) {
 		case "test":
 			verb := arguments[1]
 			switch verb {
-			case "paths":
+			case "tracks":
 				city := strings.Join(arguments[2:len(arguments) - 1], " ")
 				count, err := strconv.Atoi(arguments[len(arguments) - 1])
 				if err != nil {
@@ -85,7 +85,7 @@ func ReadMap(filename string) (*Map, error) {
 				}
 
 				if actualCnt := len(m.CityTracks(city)); actualCnt != count {
-					return nil, errors.New(fmt.Sprintf("%s contains %d paths (line %d)", city, actualCnt, curLine))
+					return nil, errors.New(fmt.Sprintf("%s contains %d tracks (line %d)", city, actualCnt, curLine))
 				}
 			case "cities":
 				count, err := strconv.Atoi(arguments[len(arguments) - 1])

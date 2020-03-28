@@ -1,18 +1,17 @@
-package heuristics
+package game
 
 import (
-	"TicketToRide/ttr"
 	"math"
 )
 
 type Score struct {}
 
-func (Score) Cost(track ttr.Track) int {
+func (Score) Cost(track Track) int {
 	return track.Score()
 }
 
 func (Score) Best(h1, h2 int) int {
-	return ttr.MaxInt(h1, h2)
+	return MaxInt(h1, h2)
 }
 
 func (Score) Less(h1, h2 int) bool {
@@ -24,5 +23,5 @@ func (Score) InitHeuristicMap() int {
 }
 
 func (Score) NegativeInfinity() int {
-	return math.MinInt16
+	return math.MaxInt16
 }

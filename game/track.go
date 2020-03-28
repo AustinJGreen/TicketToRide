@@ -1,4 +1,4 @@
-package ttr
+package game
 
 import (
 	"errors"
@@ -6,33 +6,30 @@ import (
 	"math"
 )
 
-
-
 type Track struct {
-	id     int
 	cityA  *City
 	cityB  *City
 	length int
 	color  int
 }
 
-func NewTrack(id int, cityA, cityB *City, color, length int) *Track {
-	return &Track{id, cityA, cityB, length, color}
+func NewTrack(cityA, cityB *City, color, length int) *Track {
+	return &Track{cityA, cityB, length, color}
 }
 
-func (track Track) Cost(currentCity *City, heuristicMap map[int]int, h Heuristic) int {
+func (track Track) Cost(currentCity *City, heuristicMap map[*City]int, h Heuristic) int {
 	targetCity, _ := track.Target(currentCity)
-	currentCost := heuristicMap[currentCity.id]
-	targetCost := heuristicMap[targetCity.id]
+	currentCost := heuristicMap[currentCity]
+	targetCost := heuristicMap[targetCity]
 	calculatedCost := currentCost - targetCost
 	return calculatedCost - h.Cost(track)
 }
 
-func (track Track) Matches(t *Track) bool {
+func (track Track) Matches(t Track) bool {
 	return t.HasCity(track.cityA) && t.HasCity(track.cityB)
 }
 
-func (track Track) And(targetTrack *Track) (*City, error) {
+func (track Track) And(targetTrack Track) (*City, error) {
 	if targetTrack.HasCity(track.cityA) {
 		return track.cityA, nil
 	} else if targetTrack.HasCity(track.cityB) {
@@ -42,7 +39,7 @@ func (track Track) And(targetTrack *Track) (*City, error) {
 	return nil, errors.New("tracks do not intersect")
 }
 
-func (track Track) Xor(targetTrack *Track) (*City, error) {
+func (track Track) Xor(targetTrack Track) (*City, error) {
 	if !targetTrack.HasCity(track.cityA) {
 		return track.cityA, nil
 	} else if !targetTrack.HasCity(track.cityB) {
@@ -53,18 +50,18 @@ func (track Track) Xor(targetTrack *Track) (*City, error) {
 }
 
 func (track Track) HasCity(city *City) bool {
-	switch city.id {
-	case track.cityA.id, track.cityB.id:
+	switch city {
+	case track.cityA, track.cityB:
 		return true
 	}
 	return false
 }
 
 func (track Track) Target(sourceCity *City) (*City, error) {
-	switch sourceCity.id {
-	case track.cityA.id:
+	switch sourceCity {
+	case track.cityA:
 		return track.cityB, nil
-	case track.cityB.id:
+	case track.cityB:
 		return track.cityA, nil
 	}
 
